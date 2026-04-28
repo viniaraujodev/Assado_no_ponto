@@ -83,7 +83,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     }
 
     const message = generateWhatsAppMessage();
-    const phoneNumber = '+55 92 99221-2466'; // Número do WhatsApp do restaurante
+    const phoneNumber = '+5592992212466'; // Número do WhatsApp do restaurante
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     window.open(whatsappUrl, '_blank');

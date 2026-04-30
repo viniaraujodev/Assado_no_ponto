@@ -1,6 +1,6 @@
 'use client';
 
-import { X, Minus, Plus, Trash2, ArrowRight, Printer } from 'lucide-react';
+import { X, Minus, Plus, Trash2, ArrowRight } from 'lucide-react';
 import { useCart } from '@/contexts/cart-context';
 import { deliveryZones } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -37,56 +37,19 @@ export function CartDrawer({ isOpen, onClose, onCheckout }: CartDrawerProps) {
     }).format(price);
   };
 
-  // Função para imprimir o pedido no formato de cupom
-  const handlePrint = () => {
-    const agora = new Date().toLocaleString('pt-BR', { timeZone: 'America/Manaus' });
-    const win = window.open('', 'PRINT', 'height=600,width=400');
-    
-    if (!win) return;
-
-    win.document.write(`
-      <html>
-        <head>
-          <title>Assado no Ponto - Cupom</title>
-          <style>
-            body { font-family: monospace; width: 80mm; padding: 10px; }
-            .header { text-align: center; border-bottom: 1px dashed #000; padding-bottom: 10px; }
-            .item { display: flex; justify-content: space-between; margin: 5px 0; }
-            .total-section { border-top: 1px dashed #000; margin-top: 10px; padding-top: 10px; font-weight: bold; }
-            .footer { margin-top: 20px; text-align: center; font-size: 0.8em; }
-          </style>
-        </head>
-        <body>
-          <div class="header">
-            <h3>ASSADO NO PONTO</h3>
-            <p>Data: ${agora}</p>
-          </div>
-          ${items.map(item => `
-            <div class="item">
-              <span>${item.quantity}x ${item.product.name}</span>
-              <span>${formatPrice(item.product.price * item.quantity)}</span>
-            </div>
-            ${item.addons.map(a => `<div style="font-size: 0.8em">+ ${a.name}</div>`).join('')}
-          `).join('')}
-          <div class="total-section">
-            <div class="item"><span>Subtotal:</span><span>${formatPrice(subtotal)}</span></div>
-            <div class="item"><span>Entrega:</span><span>${formatPrice(deliveryFee)}</span></div>
-            <div class="item" style="font-size: 1.2em"><span>TOTAL:</span><span>${formatPrice(total)}</span></div>
-          </div>
-          <div class="footer">Obrigado pela preferência!</div>
-        </body>
-      </html>
-    `);
-
-    win.document.close();
-    win.focus();
-    win.print();
-    win.close();
-  };
-
   const handleZoneChange = (zoneName: string) => {
     const zone = deliveryZones.find((z) => z.name === zoneName);
     setDeliveryZone(zone || null);
+  };
+
+  // --- NOVA LÓGICA DE DATA/HORA ---
+  const handleFinalizeCheckout = () => {
+    // Captura o momento exato em Manaus
+    const agora = new Date().toLocaleString('pt-BR', { timeZone: 'America/Manaus' });
+    
+    // Aqui você pode passar a data para o seu contexto ou função de envio
+    // Se o onCheckout já faz o envio para o WhatsApp, ele usará a hora do sistema
+    onCheckout();
   };
 
   if (!isOpen) return null;
@@ -100,26 +63,14 @@ export function CartDrawer({ isOpen, onClose, onCheckout }: CartDrawerProps) {
       />
       <div className="relative w-full max-w-lg animate-in slide-in-from-bottom duration-300 rounded-t-3xl bg-card shadow-2xl max-h-[85vh] flex flex-col">
         <div className="sticky top-0 flex items-center justify-between border-b border-border bg-card p-4 rounded-t-3xl">
-          <div className="flex flex-col">
-            <h2 className="text-lg font-bold text-card-foreground">Sua Sacola</h2>
-            <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">
-              Manaus - AM
-            </span>
-          </div>
-          <div className="flex gap-2">
-            {items.length > 0 && (
-              <Button variant="outline" size="icon" onClick={handlePrint} title="Imprimir cupom">
-                <Printer className="h-4 w-4" />
-              </Button>
-            )}
-            <button
-              onClick={onClose}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
-              aria-label="Fechar"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
+          <h2 className="text-lg font-bold text-card-foreground">Sua Sacola</h2>
+          <button
+            onClick={onClose}
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
+            aria-label="Fechar"
+          >
+            <X className="h-5 w-5" />
+          </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">
@@ -237,11 +188,11 @@ export function CartDrawer({ isOpen, onClose, onCheckout }: CartDrawerProps) {
         {items.length > 0 && (
           <div className="sticky bottom-0 border-t border-border bg-card p-4 safe-area-inset-bottom">
             <Button
-              onClick={onCheckout}
+              onClick={handleFinalizeCheckout} // Alterado para a função que captura o tempo
               disabled={!deliveryZone}
               className="w-full h-12 text-base font-semibold gap-2"
             >
-              Continuar para WhatsApp
+              Continuar
               <ArrowRight className="h-5 w-5" />
             </Button>
             {!deliveryZone && (

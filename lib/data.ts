@@ -62,7 +62,7 @@ export const products: Product[] = [
     price: 85,
     category: 'combos',
     description: 'Frango inteiro + Guarnição Grande + Baré 2L',
-    image: '',
+    image: '', // Se tiver foto do combo, coloque aqui ex: '/combo.jpg'
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
@@ -74,7 +74,6 @@ export const products: Product[] = [
     price: 5,
     category: 'guarnicoes',
     description: 'Porção extra de vatapá cremoso',
-    image: '',
   },
   {
     id: 'feijao-tropeiro',
@@ -82,7 +81,6 @@ export const products: Product[] = [
     price: 10,
     category: 'guarnicoes',
     description: 'Feijão tropeiro tradicional',
-    image: '',
   },
   {
     id: 'farofa-banana',
@@ -90,7 +88,13 @@ export const products: Product[] = [
     price: 10,
     category: 'guarnicoes',
     description: 'Farofa especial com banana',
-    image: '',
+  },
+  {
+    id: 'maionese',
+    name: 'Maionese',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Maionese de batata tradicional',
   },
 
   // --- REFEIÇÕES ---
@@ -100,7 +104,6 @@ export const products: Product[] = [
     price: 20,
     category: 'refeicoes',
     description: 'Refeição completa com frango e acompanhamentos',
-    image: '',
   },
 
   // --- BEBIDAS ---
@@ -110,7 +113,6 @@ export const products: Product[] = [
     price: 13,
     category: 'bebidas',
     description: 'Refrigerante Coca-Cola 2 litros',
-    image: '',
   },
   {
     id: 'bare',
@@ -118,7 +120,6 @@ export const products: Product[] = [
     price: 8,
     category: 'bebidas',
     description: 'Guaraná Baré gelado',
-    image: '',
   },
 ];
 

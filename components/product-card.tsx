@@ -10,6 +10,26 @@ interface ProductCardProps {
   onAdd: (product: Product) => void;
 }
 
+// Mapa de emojis original baseado no ID do produto
+const productEmojis: Record<string, string> = {
+  'frango-brasa': '🍗',
+  'frango-maquina': '🍗',
+  'meio-frango': '🍗',
+  'peixe-assado': '🐟',
+  'calabresa': '🌭',
+  'combo-frango-bare': '🎁',
+  'combo-peixe-bare': '🎁',
+  'vatapa-extra': '🍛',
+  'vinagrete-extra': '🥗',
+  'farofa-banana': '🍌',
+  'arroz-extra': '🍚',
+  'macarrao-extra': '🍝',
+  'quentinha-frango': '🍱',
+  'quentinha-peixe': '🍱',
+  'coca-2l': '🥤',
+  'bare': '🥤',
+};
+
 export function ProductCard({ product, onAdd }: ProductCardProps) {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -20,19 +40,11 @@ export function ProductCard({ product, onAdd }: ProductCardProps) {
 
   return (
     <Card className="flex items-center gap-3 p-3 transition-shadow hover:shadow-md">
-      {/* ESPAÇO DA IMAGEM: Agora verifica se existe foto, se não, mostra o fundo cinza */}
-      <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-muted flex items-center justify-center">
-        {product.image ? (
-          <img 
-            src={product.image} 
-            alt={product.name} 
-            className="h-full w-full object-cover transition-transform hover:scale-110"
-          />
-        ) : (
-          <span className="text-3xl">🍽️</span>
-        )}
+      {/* Container do ícone (Emoji) */}
+      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-muted text-3xl">
+        {productEmojis[product.id] || '🍽️'}
       </div>
-
+      
       <div className="flex-1 min-w-0">
         <h3 className="font-semibold text-card-foreground truncate">{product.name}</h3>
         {product.description && (

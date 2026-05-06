@@ -11,21 +11,19 @@ interface ProductListProps {
   activeCategory: string;
 }
 
+// Certifique-se de que o 'export' está aqui!
 export function ProductList({ activeCategory }: ProductListProps) {
   const { addItem } = useCart();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  // Filtra os produtos com base na categoria selecionada nas abas
   const filteredProducts = products.filter(
     (product) => product.category === activeCategory
   );
 
   const handleAddProduct = (product: Product) => {
-    // Se o produto tiver acompanhamentos (frango/peixe), abre o modal
     if (product.hasIncludes) {
       setSelectedProduct(product);
     } else {
-      // Se for item simples (bebida/guarnição), adiciona direto ao carrinho
       addItem(product, 1, [], []);
     }
   };
@@ -47,7 +45,6 @@ export function ProductList({ activeCategory }: ProductListProps) {
         </div>
       </div>
 
-      {/* Modal para escolha de acompanhamentos (Vatapá, Baião, etc) */}
       {selectedProduct && (
         <AddonsModal
           product={selectedProduct}

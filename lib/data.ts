@@ -1,6 +1,6 @@
 import { Product, DeliveryZone, IncludedItem } from './types';
 
-// ACOMPANHAMENTOS PADRÃO
+// Itens inclusos para frangos (Vatapá, Macarrão, Baião, Farofa)
 export const frangoIncludes: IncludedItem[] = [
   { id: 'vatapa', name: 'Vatapá' },
   { id: 'macarrao', name: 'Macarrão' },
@@ -8,6 +8,7 @@ export const frangoIncludes: IncludedItem[] = [
   { id: 'farofa', name: 'Farofa' },
 ];
 
+// Itens inclusos para peixe (Baião, Vinagrete, Limão, Farofa)
 export const peixeIncludes: IncludedItem[] = [
   { id: 'baiao', name: 'Baião' },
   { id: 'vinagrete', name: 'Vinagrete' },
@@ -15,16 +16,14 @@ export const peixeIncludes: IncludedItem[] = [
   { id: 'farofa', name: 'Farofa' },
 ];
 
-// PRODUTOS
 export const products: Product[] = [
-  // --- ASSADOS ---
+  // Assados
   {
     id: 'frango-brasa',
     name: 'Frango na Brasa',
     price: 65,
     category: 'assados',
     description: 'Frango inteiro assado na brasa com acompanhamentos',
-    image: '', 
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
@@ -34,7 +33,6 @@ export const products: Product[] = [
     price: 65,
     category: 'assados',
     description: 'Frango inteiro assado na máquina com acompanhamentos',
-    image: '',
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
@@ -44,7 +42,6 @@ export const products: Product[] = [
     price: 35,
     category: 'assados',
     description: 'Meio frango assado, perfeito para uma pessoa',
-    image: '',
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
@@ -54,7 +51,6 @@ export const products: Product[] = [
     price: 75,
     category: 'assados',
     description: 'Peixe fresco assado com temperos especiais',
-    image: '',
     hasIncludes: true,
     includedItems: peixeIncludes,
   },
@@ -64,35 +60,54 @@ export const products: Product[] = [
     price: 12,
     category: 'assados',
     description: 'Porção de calabresa assada na brasa',
-    image: '',
   },
-
-  // --- COMBOS (Para não ficar vazio!) ---
+  // Combos
   {
     id: 'combo-frango-bare',
-    name: 'Combo Assado no Ponto',
+    name: 'Combo Frango + Baré 1L',
     price: 70,
     category: 'combos',
-    description: 'Frango inteiro + Acompanhamentos + Baré 2L',
-    image: '',
+    description: 'Frango completo + Guaraná Baré 1L',
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
-
-  // --- GUARNIÇÕES ---
+  {
+    id: 'combo-peixe-bare',
+    name: 'Combo Peixe + Baré 1L',
+    price: 80,
+    category: 'combos',
+    description: 'Peixe completo + Guaraná Baré 1L',
+    hasIncludes: true,
+    includedItems: peixeIncludes,
+  },
+  // Guarnicoes (Extras para venda separada)
   {
     id: 'vatapa-extra',
     name: 'Vatapá Extra',
     price: 5,
     category: 'guarnicoes',
-    description: 'Porção extra de vatapá cremoso',
+    description: 'Porcao extra de vatapa cremoso',
+  },
+  {
+    id: 'vinagrete-extra',
+    name: 'Vinagrete Extra',
+    price: 5,
+    category: 'guarnicoes',
+    description: 'Porcao extra de vinagrete fresco',
+  },
+  {
+    id: 'maionese-extra',
+    name: 'Maionese',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Porcao de maionese caseira',
   },
   {
     id: 'feijao-tropeiro',
-    name: 'Feijão Tropeiro',
+    name: 'Feijao Tropeiro',
     price: 10,
     category: 'guarnicoes',
-    description: 'Feijão tropeiro tradicional',
+    description: 'Feijao tropeiro tradicional',
   },
   {
     id: 'farofa-banana',
@@ -101,17 +116,57 @@ export const products: Product[] = [
     category: 'guarnicoes',
     description: 'Farofa especial com banana',
   },
-
-  // --- REFEIÇÕES ---
+  {
+    id: 'macaxeira-frita',
+    name: 'Macaxeira Frita',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Porcao de macaxeira frita crocante',
+  },
+  {
+    id: 'banana-frita',
+    name: 'Banana Frita',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Porcao de banana frita',
+  },
+  {
+    id: 'farofa-calabresa',
+    name: 'Farofa de Calabresa',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Farofa com pedacos de calabresa',
+  },
+  {
+    id: 'arroz-extra',
+    name: 'Arroz',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Porcao extra de arroz',
+  },
+  {
+    id: 'baiao-extra',
+    name: 'Baiao',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Porcao de baiao de dois',
+  },
+  // Refeições
   {
     id: 'quentinha-frango',
     name: 'Quentinha de Frango',
     price: 20,
     category: 'refeicoes',
-    description: 'Refeição completa com frango e acompanhamentos',
+    description: 'Refeição completa com frango, arroz e acompanhamentos',
   },
-
-  // --- BEBIDAS ---
+  {
+    id: 'quentinha-peixe',
+    name: 'Quentinha de Peixe',
+    price: 20,
+    category: 'refeicoes',
+    description: 'Refeição completa com peixe, arroz e acompanhamentos',
+  },
+  // Bebidas
   {
     id: 'coca-2l',
     name: 'Coca-Cola 2L',
@@ -128,10 +183,9 @@ export const products: Product[] = [
   },
 ];
 
-// TAXAS DE ENTREGA (Confirmadas para Manaus)
 export const deliveryZones: DeliveryZone[] = [
-  { name: 'Ajuricaba', fee: 6 },
-  { name: 'Planalto', fee: 6 },
+  { name: 'Ajuricaba', fee: 5 },
+  { name: 'Planalto', fee: 5 },
   { name: 'Redenção', fee: 6 },
   { name: 'Versalhes', fee: 6 },
   { name: 'Bairro da Paz', fee: 7 },
@@ -139,14 +193,12 @@ export const deliveryZones: DeliveryZone[] = [
   { name: 'Lírio do Vale', fee: 8 },
   { name: 'Nova Esperança', fee: 9 },
   { name: 'Dom Pedro', fee: 10 },
-  { name: 'Flores', fee: 12 },
   { name: 'Djalma Batista', fee: 13 },
   { name: 'Constantino Nery', fee: 13 },
   { name: 'Glória', fee: 15 },
   { name: 'São Raimundo', fee: 15 },
   { name: 'São Jorge', fee: 15 },
   { name: 'Compensa', fee: 15 },
-  { name: 'Tarumã', fee: 18 },
   { name: 'São Francisco', fee: 20 },
   { name: 'Petrópolis', fee: 20 },
   { name: 'Educandos', fee: 20 },
@@ -161,5 +213,9 @@ export const categoryNames: Record<string, string> = {
 };
 
 export const categoryIcons: Record<string, string> = {
-  assados: '', combos: '', guarnicoes: '', refeicoes: '', bebidas: '',
+  assados: '🍗',
+  combos: '🎁',
+  guarnicoes: '🍚',
+  refeicoes: '🍱',
+  bebidas: '🥤',
 };

@@ -56,6 +56,14 @@ export const products: Product[] = [
     hasIncludes: true,
     includedItems: peixeIncludes,
   },
+  {
+    id: 'calabresa',
+    name: 'Calabresa',
+    price: 12,
+    category: 'assados',
+    description: 'Porção de calabresa assada na brasa',
+    image: '/calabresa.jpg',
+  },
 
   // --- COMBOS ---
   {

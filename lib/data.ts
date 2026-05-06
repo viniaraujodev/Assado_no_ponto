@@ -41,8 +41,8 @@ export const products: Product[] = [
     name: 'Meio Frango de Máquina',
     price: 35,
     category: 'assados',
-    description: 'Meio frango assado na máquina com acompanhamentos',
-    image: '/frangodemaquina.jpg',
+    description: 'Meio frango de máquina com acompanhamentos',
+    image: '', 
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
@@ -67,70 +67,61 @@ export const products: Product[] = [
 
   // --- COMBOS ---
   {
-    id: 'combo-familia',
-    name: 'Combo Assado no Ponto',
-    price: 85,
+    id: 'combo-frango-bare',
+    name: 'Frango + Baré',
+    price: 70,
     category: 'combos',
-    description: 'Frango inteiro + Guarnição Grande + Baré 2L',
-    image: '', // Se tiver foto do combo, coloque aqui ex: '/combo.jpg'
+    description: 'Frango assado + acompanhamentos + Baré 2L',
+    image: '',
     hasIncludes: true,
     includedItems: frangoIncludes,
   },
+  {
+    id: 'combo-tambaqui-bare',
+    name: 'Tambaqui + Baré',
+    price: 85,
+    category: 'combos',
+    description: 'Tambaqui assado + acompanhamentos + Baré 2L',
+    image: '',
+    hasIncludes: true,
+    includedItems: peixeIncludes,
+  },
 
   // --- GUARNIÇÕES ---
-  {
-    id: 'vatapa-extra',
-    name: 'Vatapá Extra',
-    price: 5,
-    category: 'guarnicoes',
-    description: 'Porção extra de vatapá cremoso',
-  },
-  {
-    id: 'feijao-tropeiro',
-    name: 'Feijão Tropeiro',
-    price: 10,
-    category: 'guarnicoes',
-    description: 'Feijão tropeiro tradicional',
-  },
-  {
-    id: 'farofa-banana',
-    name: 'Farofa de Banana',
-    price: 10,
-    category: 'guarnicoes',
-    description: 'Farofa especial com banana',
-  },
-  {
-    id: 'maionese',
-    name: 'Maionese',
-    price: 10,
-    category: 'guarnicoes',
-    description: 'Maionese de batata tradicional',
-  },
+  { id: 'baiao', name: 'Baião', price: 10, category: 'guarnicoes' },
+  { id: 'farofa-calabresa', name: 'Farofa de Calabresa', price: 10, category: 'guarnicoes' },
+  { id: 'banana-frita', name: 'Banana Frita', price: 10, category: 'guarnicoes' },
+  { id: 'arroz-branco', name: 'Arroz Branco', price: 10, category: 'guarnicoes' },
+  { id: 'macacheira', name: 'Macacheira', price: 10, category: 'guarnicoes' },
+  { id: 'vatapa-extra', name: 'Vatapá Extra', price: 5, category: 'guarnicoes' },
+  { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes' },
 
   // --- REFEIÇÕES ---
+  {
+    id: 'quentinha-tambaqui',
+    name: 'Quentinha de Tambaqui',
+    price: 25,
+    category: 'refeicoes',
+    description: 'Refeição individual de tambaqui assado',
+  },
+  {
+    id: 'quentinha-misto',
+    name: 'Quentinha Misto (Frango e Calabresa)',
+    price: 20,
+    category: 'refeicoes',
+    description: 'Refeição individual com frango e calabresa',
+  },
   {
     id: 'quentinha-frango',
     name: 'Quentinha de Frango',
     price: 20,
     category: 'refeicoes',
-    description: 'Refeição completa com frango e acompanhamentos',
+    description: 'Refeição individual com frango assado',
   },
 
   // --- BEBIDAS ---
-  {
-    id: 'coca-2l',
-    name: 'Coca-Cola 2L',
-    price: 13,
-    category: 'bebidas',
-    description: 'Refrigerante Coca-Cola 2 litros',
-  },
-  {
-    id: 'bare',
-    name: 'Baré',
-    price: 8,
-    category: 'bebidas',
-    description: 'Guaraná Baré gelado',
-  },
+  { id: 'coca-2l', name: 'Coca-Cola 2L', price: 13, category: 'bebidas' },
+  { id: 'bare', name: 'Baré 2L', price: 8, category: 'bebidas' },
 ];
 
 export const deliveryZones: DeliveryZone[] = [
@@ -159,8 +150,8 @@ export const deliveryZones: DeliveryZone[] = [
 export const categoryNames: Record<string, string> = {
   assados: 'Assados',
   combos: 'Combos',
-  guarnicoes: 'guarnicoes',
-  refeicoes: 'Refeicoes',
+  guarnicoes: 'Guarnições',
+  refeicoes: 'Refeições',
   bebidas: 'Bebidas',
 };
 

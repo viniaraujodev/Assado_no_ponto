@@ -94,7 +94,7 @@ export const products: Product[] = [
   { id: 'arroz-branco', name: 'Arroz Branco', price: 10, category: 'guarnicoes', description: 'Porção de arroz branco' },
   { id: 'macacheira', name: 'Macacheira', price: 10, category: 'guarnicoes', description: 'Macacheira cozida ou frita' },
   { id: 'vatapa-extra', name: 'Vatapá Extra', price: 5, category: 'guarnicoes', description: 'Vatapá cremoso adicional' },
-  { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes', description: 'Maionese de batata tradicional' },
+  { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes', description: 'Maionese de batata da casa' },
   { id: 'feijao-tropeiro', name: 'Feijão Tropeiro', price: 10, category: 'guarnicoes', description: 'Feijão tropeiro tradicional' },
 
   // --- REFEIÇÕES ---
@@ -120,7 +120,7 @@ export const products: Product[] = [
     description: 'Refeição individual com frango assado',
   },
 
-  // --- BEBIDAS (AQUI ESTÃO ELAS!) ---
+  // --- BEBIDAS ---
   {
     id: 'coca-2l',
     name: 'Coca-Cola 2L',

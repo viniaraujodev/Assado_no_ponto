@@ -15,6 +15,7 @@ export const peixeIncludes: IncludedItem[] = [
 ];
 
 export const products: Product[] = [
+  // --- ASSADOS ---
   {
     id: 'frango-brasa',
     name: 'Frango na Brasa',
@@ -53,17 +54,74 @@ export const products: Product[] = [
     description: 'Porção de calabresa assada na brasa',
     image: '/calabresa.jpg',
   },
+
+  // --- COMBOS ---
+  {
+    id: 'combo-familia',
+    name: 'Combo Assado no Ponto',
+    price: 85,
+    category: 'combos',
+    description: 'Frango inteiro + Guarnição Grande + Baré 2L',
+    image: '',
+    hasIncludes: true,
+    includedItems: frangoIncludes,
+  },
+
+  // --- GUARNIÇÕES ---
+  {
+    id: 'vatapa-extra',
+    name: 'Vatapá Extra',
+    price: 5,
+    category: 'guarnicoes',
+    description: 'Porção extra de vatapá cremoso',
+    image: '',
+  },
+  {
+    id: 'feijao-tropeiro',
+    name: 'Feijão Tropeiro',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Feijão tropeiro tradicional',
+    image: '',
+  },
+  {
+    id: 'farofa-banana',
+    name: 'Farofa de Banana',
+    price: 10,
+    category: 'guarnicoes',
+    description: 'Farofa especial com banana',
+    image: '',
+  },
+
+  // --- REFEIÇÕES ---
+  {
+    id: 'quentinha-frango',
+    name: 'Quentinha de Frango',
+    price: 20,
+    category: 'refeicoes',
+    description: 'Refeição completa com frango e acompanhamentos',
+    image: '',
+  },
+
+  // --- BEBIDAS ---
+  {
+    id: 'coca-2l',
+    name: 'Coca-Cola 2L',
+    price: 13,
+    category: 'bebidas',
+    description: 'Refrigerante Coca-Cola 2 litros',
+    image: '',
+  },
   {
     id: 'bare',
     name: 'Baré',
     price: 8,
     category: 'bebidas',
     description: 'Guaraná Baré gelado',
-    image: '', 
+    image: '',
   },
 ];
 
-// TODAS AS TAXAS DE ENTREGA INCLUÍDAS
 export const deliveryZones: DeliveryZone[] = [
   { name: 'Ajuricaba', fee: 6 },
   { name: 'Planalto', fee: 6 },

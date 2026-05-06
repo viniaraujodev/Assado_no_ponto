@@ -149,8 +149,8 @@ export const deliveryZones: DeliveryZone[] = [
 export const categoryNames: Record<string, string> = {
   assados: 'Assados',
   combos: 'Combos',
-  guarnicoes: 'Guarnições',
-  refeicoes: 'Refeições',
+  guarnicoes: 'guarnicoes',
+  refeicoes: 'Refeicoes',
   bebidas: 'Bebidas',
 };
 

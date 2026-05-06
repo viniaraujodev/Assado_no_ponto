@@ -37,6 +37,16 @@ export const products: Product[] = [
     includedItems: frangoIncludes,
   },
   {
+    id: 'meio-frango-maquina',
+    name: 'Meio Frango de Máquina',
+    price: 35,
+    category: 'assados',
+    description: 'Meio frango assado na máquina com acompanhamentos',
+    image: '/frangodemaquina.jpg',
+    hasIncludes: true,
+    includedItems: frangoIncludes,
+  },
+  {
     id: 'peixe-assado',
     name: 'Peixe Assado (Tambaqui)',
     price: 75,

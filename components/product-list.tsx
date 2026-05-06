@@ -28,28 +28,20 @@ export function ProductList({ activeCategory }: ProductListProps) {
   };
 
   return (
-    // mx-auto centraliza o bloco e max-w-md impede que os cards estiquem demais
-    <div className="mx-auto max-w-md px-4 pb-24 min-h-screen">
-      <div className="py-6">
-        <h2 className="text-xl font-black text-slate-900 mb-4 text-left border-l-4 border-red-600 pl-3">
+    <div className="mx-auto max-w-lg px-4 pb-24">
+      <div className="py-4">
+        <h2 className="text-lg font-bold text-foreground mb-3">
           {categoryNames[activeCategory]}
         </h2>
-        
-        {filteredProducts.length > 0 ? (
-          <div className="flex flex-col gap-3">
-            {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onAdd={handleAddProduct}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="py-20 text-center text-slate-400">
-            <p>Nenhum item nesta categoria ainda.</p>
-          </div>
-        )}
+        <div className="space-y-3">
+          {filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAdd={handleAddProduct}
+            />
+          ))}
+        </div>
       </div>
 
       {selectedProduct && (

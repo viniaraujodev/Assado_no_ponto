@@ -42,14 +42,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
   };
 
   const generateWhatsAppMessage = () => {
-    // Pega a data e hora de Manaus
-    const agora = new Date().toLocaleString('pt-BR', { 
-      timeZone: 'America/Manaus' 
-    });
-
-    let message = `🔥 *PEDIDO - ASSADO NO PONTO*\n`;
-    message += `📅 *Data/Hora:* ${agora}\n`;
-    message += `━━━━━━━━━━━━━━━━\n\n`;
+    let message = `🔥 *PEDIDO - ASSADO NO PONTO*\n\n`;
     message += `👤 *Cliente:* ${formData.name}\n`;
     message += `📍 *Endereço:* ${formData.address}\n`;
     message += `🏘️ *Bairro:* ${deliveryZone?.name}\n`;
@@ -90,7 +83,7 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     }
 
     const message = generateWhatsAppMessage();
-    const phoneNumber = '+5592992212466'; 
+    const phoneNumber = '+55 92 99221-2466'; // Número do WhatsApp do restaurante
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     window.open(whatsappUrl, '_blank');

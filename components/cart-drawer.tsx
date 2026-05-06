@@ -42,16 +42,6 @@ export function CartDrawer({ isOpen, onClose, onCheckout }: CartDrawerProps) {
     setDeliveryZone(zone || null);
   };
 
-  // --- NOVA LÓGICA DE DATA/HORA ---
-  const handleFinalizeCheckout = () => {
-    // Captura o momento exato em Manaus
-    const agora = new Date().toLocaleString('pt-BR', { timeZone: 'America/Manaus' });
-    
-    // Aqui você pode passar a data para o seu contexto ou função de envio
-    // Se o onCheckout já faz o envio para o WhatsApp, ele usará a hora do sistema
-    onCheckout();
-  };
-
   if (!isOpen) return null;
 
   return (
@@ -188,7 +178,7 @@ export function CartDrawer({ isOpen, onClose, onCheckout }: CartDrawerProps) {
         {items.length > 0 && (
           <div className="sticky bottom-0 border-t border-border bg-card p-4 safe-area-inset-bottom">
             <Button
-              onClick={handleFinalizeCheckout} // Alterado para a função que captura o tempo
+              onClick={onCheckout}
               disabled={!deliveryZone}
               className="w-full h-12 text-base font-semibold gap-2"
             >

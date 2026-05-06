@@ -56,14 +56,6 @@ export const products: Product[] = [
     hasIncludes: true,
     includedItems: peixeIncludes,
   },
-  {
-    id: 'calabresa',
-    name: 'Calabresa',
-    price: 12,
-    category: 'assados',
-    description: 'Porção de calabresa assada na brasa',
-    image: '/calabresa.jpg',
-  },
 
   // --- COMBOS ---
   {
@@ -87,16 +79,15 @@ export const products: Product[] = [
     includedItems: peixeIncludes,
   },
 
-  // --- GUARNIÇÕES ---
-  { id: 'baiao', name: 'Baião', price: 10, category: 'guarnicoes' },
-  { id: 'farofa-calabresa', name: 'Farofa de Calabresa', price: 10, category: 'guarnicoes' },
-  { id: 'banana-frita', name: 'Banana Frita', price: 10, category: 'guarnicoes' },
-  { id: 'arroz-branco', name: 'Arroz Branco', price: 10, category: 'guarnicoes' },
-  { id: 'macacheira', name: 'Macacheira', price: 10, category: 'guarnicoes' },
-  { id: 'vatapa-extra', name: 'Vatapá Extra', price: 5, category: 'guarnicoes' },
-  { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes' },
+  // --- GUARNIÇÕES (Categoria: guarnicoes - SEM ACENTO) ---
+  { id: 'baiao-10', name: 'Baião', price: 10, category: 'guarnicoes', description: 'Porção de baião de dois' },
+  { id: 'farofa-calabresa', name: 'Farofa de Calabresa', price: 10, category: 'guarnicoes', description: 'Farofa crocante com calabresa' },
+  { id: 'banana-frita', name: 'Banana Frita', price: 10, category: 'guarnicoes', description: 'Porção de banana frita' },
+  { id: 'arroz-branco', name: 'Arroz Branco', price: 10, category: 'guarnicoes', description: 'Porção de arroz branco' },
+  { id: 'macacheira', name: 'Macacheira', price: 10, category: 'guarnicoes', description: 'Macacheira cozida ou frita' },
+  { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes', description: 'Maionese de batata da casa' },
 
-  // --- REFEIÇÕES ---
+  // --- REFEIÇÕES (Categoria: refeicoes - SEM ACENTO) ---
   {
     id: 'quentinha-tambaqui',
     name: 'Quentinha de Tambaqui',
@@ -111,47 +102,24 @@ export const products: Product[] = [
     category: 'refeicoes',
     description: 'Refeição individual com frango e calabresa',
   },
-  {
-    id: 'quentinha-frango',
-    name: 'Quentinha de Frango',
-    price: 20,
-    category: 'refeicoes',
-    description: 'Refeição individual com frango assado',
-  },
-
-  // --- BEBIDAS ---
-  { id: 'coca-2l', name: 'Coca-Cola 2L', price: 13, category: 'bebidas' },
-  { id: 'bare', name: 'Baré 2L', price: 8, category: 'bebidas' },
 ];
 
+// ... (Zonas de entrega se mantêm as mesmas)
 export const deliveryZones: DeliveryZone[] = [
-  { name: 'Ajuricaba', fee: 6 },
-  { name: 'Planalto', fee: 6 },
-  { name: 'Redenção', fee: 6 },
-  { name: 'Versalhes', fee: 6 },
-  { name: 'Bairro da Paz', fee: 7 },
-  { name: 'Alvorada', fee: 8 },
-  { name: 'Lírio do Vale', fee: 8 },
-  { name: 'Nova Esperança', fee: 9 },
-  { name: 'Dom Pedro', fee: 10 },
-  { name: 'Flores', fee: 12 },
-  { name: 'Djalma Batista', fee: 13 },
-  { name: 'Constantino Nery', fee: 13 },
-  { name: 'Glória', fee: 15 },
-  { name: 'São Raimundo', fee: 15 },
-  { name: 'São Jorge', fee: 15 },
-  { name: 'Compensa', fee: 15 },
-  { name: 'Tarumã', fee: 18 },
-  { name: 'São Francisco', fee: 20 },
-  { name: 'Petrópolis', fee: 20 },
-  { name: 'Educandos', fee: 20 },
+  { name: 'Ajuricaba', fee: 6 }, { name: 'Planalto', fee: 6 }, { name: 'Redenção', fee: 6 },
+  { name: 'Versalhes', fee: 6 }, { name: 'Bairro da Paz', fee: 7 }, { name: 'Alvorada', fee: 8 },
+  { name: 'Lírio do Vale', fee: 8 }, { name: 'Nova Esperança', fee: 9 }, { name: 'Dom Pedro', fee: 10 },
+  { name: 'Flores', fee: 12 }, { name: 'Djalma Batista', fee: 13 }, { name: 'Constantino Nery', fee: 13 },
+  { name: 'Glória', fee: 15 }, { name: 'São Raimundo', fee: 15 }, { name: 'São Jorge', fee: 15 },
+  { name: 'Compensa', fee: 15 }, { name: 'Tarumã', fee: 18 }, { name: 'São Francisco', fee: 20 },
+  { name: 'Petrópolis', fee: 20 }, { name: 'Educandos', fee: 20 },
 ];
 
 export const categoryNames: Record<string, string> = {
   assados: 'Assados',
   combos: 'Combos',
-  guarnicoes: 'Guarnições',
-  refeicoes: 'Refeições',
+  guarnicoes: 'Guarnições', // O NOME que aparece pro cliente tem acento
+  refeicoes: 'Refeições',   // O ID (chave) não tem!
   bebidas: 'Bebidas',
 };
 

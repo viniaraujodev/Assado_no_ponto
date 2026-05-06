@@ -15,9 +15,9 @@ export const peixeIncludes: IncludedItem[] = [
   { id: 'farofa', name: 'Farofa' },
 ];
 
-// TODOS OS PRODUTOS DO ASSADO NO PONTO
+// PRODUTOS
 export const products: Product[] = [
-  // ASSADOS
+  // --- ASSADOS ---
   {
     id: 'frango-brasa',
     name: 'Frango na Brasa',
@@ -67,7 +67,19 @@ export const products: Product[] = [
     image: '',
   },
 
-  // GUARNIÇÕES
+  // --- COMBOS (Para não ficar vazio!) ---
+  {
+    id: 'combo-frango-bare',
+    name: 'Combo Assado no Ponto',
+    price: 70,
+    category: 'combos',
+    description: 'Frango inteiro + Acompanhamentos + Baré 2L',
+    image: '',
+    hasIncludes: true,
+    includedItems: frangoIncludes,
+  },
+
+  // --- GUARNIÇÕES ---
   {
     id: 'vatapa-extra',
     name: 'Vatapá Extra',
@@ -90,7 +102,7 @@ export const products: Product[] = [
     description: 'Farofa especial com banana',
   },
 
-  // REFEIÇÕES
+  // --- REFEIÇÕES ---
   {
     id: 'quentinha-frango',
     name: 'Quentinha de Frango',
@@ -99,7 +111,7 @@ export const products: Product[] = [
     description: 'Refeição completa com frango e acompanhamentos',
   },
 
-  // BEBIDAS
+  // --- BEBIDAS ---
   {
     id: 'coca-2l',
     name: 'Coca-Cola 2L',
@@ -116,7 +128,7 @@ export const products: Product[] = [
   },
 ];
 
-// TAXAS DE ENTREGA ATUALIZADAS
+// TAXAS DE ENTREGA (Confirmadas para Manaus)
 export const deliveryZones: DeliveryZone[] = [
   { name: 'Ajuricaba', fee: 6 },
   { name: 'Planalto', fee: 6 },
@@ -148,11 +160,6 @@ export const categoryNames: Record<string, string> = {
   bebidas: 'Bebidas',
 };
 
-// Deixando vazio para não bugar o texto das abas
 export const categoryIcons: Record<string, string> = {
-  assados: '',
-  combos: '',
-  guarnicoes: '',
-  refeicoes: '',
-  bebidas: '',
+  assados: '', combos: '', guarnicoes: '', refeicoes: '', bebidas: '',
 };

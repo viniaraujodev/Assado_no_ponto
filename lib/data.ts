@@ -1,4 +1,6 @@
 import { Product, DeliveryZone, IncludedItem } from './types';
+// O número da loja para o WhatsApp
+export const STORE_PHONE = '5592992212466';
 
 export const frangoIncludes: IncludedItem[] = [
   { id: 'vatapa', name: 'Vatapá' },

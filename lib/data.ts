@@ -1,7 +1,9 @@
 import { Product, DeliveryZone, IncludedItem } from './types';
-// O número da loja para o WhatsApp
-export const STORE_PHONE = '5592992212466';
 
+// 1. CONFIGURAÇÃO DA LOJA
+export const STORE_PHONE = '5592992212466'; 
+
+// 2. ITENS INCLUSOS (ACOMPANHAMENTOS)
 export const frangoIncludes: IncludedItem[] = [
   { id: 'vatapa', name: 'Vatapá' },
   { id: 'macarrao', name: 'Macarrão' },
@@ -16,6 +18,7 @@ export const peixeIncludes: IncludedItem[] = [
   { id: 'farofa', name: 'Farofa' },
 ];
 
+// 3. TODOS OS PRODUTOS (CARDÁPIO)
 export const products: Product[] = [
   // --- ASSADOS ---
   {
@@ -81,7 +84,7 @@ export const products: Product[] = [
   {
     id: 'combo-tambaqui-bare',
     name: 'Tambaqui + Baré',
-    price: 80,
+    price: 85,
     category: 'combos',
     description: 'Tambaqui assado + acompanhamentos + Baré 2L',
     image: '', 
@@ -92,11 +95,11 @@ export const products: Product[] = [
   // --- GUARNIÇÕES ---
   { id: 'baiao', name: 'Baião', price: 10, category: 'guarnicoes', image: '/baiao.jpeg', description: 'Porção de baião de dois' },
   { id: 'farofa-calabresa', name: 'Farofa de Calabresa', price: 10, category: 'guarnicoes', image: '/farofacalabresa.jpeg', description: 'Farofa crocante com calabresa' },
-  { id: 'banana-frita', name: 'Banana Frita', price: 10, category: 'guarnicoes', image: '/faforadebana.jpeg', description: 'Porção de banana frita' },
+  { id: 'farofa-banana', name: 'Farofa de Banana', price: 10, category: 'guarnicoes', image: '/faforadebana.jpeg', description: 'Farofa especial com banana frita' },
   { id: 'arroz-branco', name: 'Arroz Branco', price: 10, category: 'guarnicoes', image: '/arroz.jpeg', description: 'Porção de arroz branco' },
-  { id: 'macaxeira', name: 'Macacheira', price: 10, category: 'guarnicoes', description: 'Macacheira cozida ou frita' },
+  { id: 'macaxeira', name: 'Macaxeira', price: 10, category: 'guarnicoes', description: 'Macaxeira cozida ou frita' },
   { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes', image: '/maionese.jpeg', description: 'Maionese de batata da casa' },
-  { id: 'vatapa-extra', name: 'Vatapá Extra', price: 10, category: 'guarnicoes', description: 'Vatapá cremoso adicional' },
+  { id: 'vatapa-extra', name: 'Vatapá Extra', price: 5, category: 'guarnicoes', description: 'Vatapá cremoso adicional' },
   { id: 'feijao-tropeiro', name: 'Feijão Tropeiro', price: 10, category: 'guarnicoes', description: 'Feijão tropeiro tradicional' },
 
   // --- REFEIÇÕES ---
@@ -128,6 +131,7 @@ export const products: Product[] = [
   { id: 'bare', name: 'Baré 2L', price: 8, category: 'bebidas', image: '/bare.avif', description: 'Gelado' },
 ];
 
+// 4. TAXAS DE ENTREGA
 export const deliveryZones: DeliveryZone[] = [
   { name: 'Ajuricaba', fee: 6 }, { name: 'Planalto', fee: 6 }, { name: 'Redenção', fee: 6 },
   { name: 'Versalhes', fee: 6 }, { name: 'Bairro da Paz', fee: 7 }, { name: 'Alvorada', fee: 8 },
@@ -138,6 +142,7 @@ export const deliveryZones: DeliveryZone[] = [
   { name: 'Petrópolis', fee: 20 }, { name: 'Educandos', fee: 20 },
 ];
 
+// 5. NOMES DAS CATEGORIAS
 export const categoryNames: Record<string, string> = {
   assados: 'Assados',
   combos: 'Combos',

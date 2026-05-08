@@ -94,7 +94,7 @@ export const products: Product[] = [
   { id: 'farofa-calabresa', name: 'Farofa de Calabresa', price: 10, category: 'guarnicoes', image: '/farofacalabresa.jpeg', description: 'Farofa crocante com calabresa' },
   { id: 'banana-frita', name: 'Banana Frita', price: 10, category: 'guarnicoes', image: '/faforadebana.jpeg', description: 'Porção de banana frita' },
   { id: 'arroz-branco', name: 'Arroz Branco', price: 10, category: 'guarnicoes', image: '/arroz.jpeg', description: 'Porção de arroz branco' },
-  { id: 'macacheira', name: 'Macacheira', price: 10, category: 'guarnicoes', description: 'Macacheira cozida ou frita' },
+  { id: 'macaxeira', name: 'Macacheira', price: 10, category: 'guarnicoes', description: 'Macacheira cozida ou frita' },
   { id: 'maionese', name: 'Maionese', price: 10, category: 'guarnicoes', image: '/maionese.jpeg', description: 'Maionese de batata da casa' },
   { id: 'vatapa-extra', name: 'Vatapá Extra', price: 10, category: 'guarnicoes', description: 'Vatapá cremoso adicional' },
   { id: 'feijao-tropeiro', name: 'Feijão Tropeiro', price: 10, category: 'guarnicoes', description: 'Feijão tropeiro tradicional' },
